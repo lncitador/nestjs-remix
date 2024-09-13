@@ -6,9 +6,9 @@
   "types": "index.d.ts",
   "private": true,
   "scripts": {
-    "postinstall": "npm run pack",
+    "postinstall": "echo 'npm run pack'",
     "start:dev": "cd example && npm run start:dev",
-    "build": "nest build",
+    "build": "tsup",
     "pack": "npm run build",
     "publish": "npm run pack && cd nestjs-remix && npm publish"
   },
@@ -32,35 +32,49 @@
   "license": "ISC",
   "sideEffects": false,
   "dependencies": {
-    "@nestjs/common": "^10.2.8",
-    "@nestjs/core": "^10.2.8",
-    "@nestjs/serve-static": "^4.0.0",
-    "@nestjs/testing": "^10.2.10",
-    "@remix-run/express": "^2.4.0",
-    "@remix-run/node": "^2.4.0",
-    "@remix-run/react": "^2.4.0",
-    "@remix-run/serve": "^2.4.0",
+    "@nestjs/common": "^10.3.8",
+    "@nestjs/core": "^10.3.8",
+    "@nestjs/serve-static": "^4.0.2",
+    "@nestjs/testing": "^10.3.8",
+    "@remix-run/express": "^2.9.1",
+    "@remix-run/node": "^2.9.1",
+    "@remix-run/react": "^2.9.1",
+    "@remix-run/serve": "^2.9.1",
+    "@swc/core": "^1.5.0",
     "commander": "^12.0.0",
     "express-serve-static-core": "^0.1.1",
     "object-to-formdata": "^4.5.1",
-    "reflect-metadata": "^0.1.13"
+    "reflect-metadata": "^0.2.2",
+    "tsup": "^8.0.2"
   },
   "devDependencies": {
-    "@nestjs/cli": "^10.1.18",
+    "@nestjs/cli": "^10.3.2",
     "@remix-run/testing": "^2.4.0",
     "@testing-library/react": "^14.1.2",
     "@types/node": "^20.8.4",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
-    "@nestjs/common": "^10.2.8",
-    "@nestjs/core": "^10.2.8",
-    "@nestjs/serve-static": "^4.0.0",
-    "@remix-run/express": "^2.4.0",
-    "@remix-run/node": "^2.4.0",
-    "@remix-run/react": "^2.4.0",
-    "@remix-run/serve": "^2.4.0",
+    "@nestjs/common": "^10.3.8",
+    "@nestjs/core": "^10.3.8",
+    "@nestjs/serve-static": "^4.0.2",
+    "@remix-run/express": "^2.9.1",
+    "@remix-run/node": "^2.9.1",
+    "@remix-run/react": "^2.9.1",
+    "@remix-run/serve": "^2.9.1",
     "express-serve-static-core": "^0.1.1",
-    "reflect-metadata": "^0.1.13"
+    "react": "^18.2.0",
+    "reflect-metadata": "^0.2.2"
+  },
+  "tsup": {
+    "entry": [
+      "./src/index.ts"
+    ],
+    "outDir": "./nestjs-remix",
+    "clean": false,
+    "format": "cjs",
+    "dts": true,
+    "sourcemap": false,
+    "tsconfig": "tsconfig.build.json"
   }
 }

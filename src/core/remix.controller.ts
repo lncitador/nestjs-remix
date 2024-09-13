@@ -5,7 +5,7 @@ import path from "path";
 import { All, Controller, Next, Req, Res } from "@nestjs/common";
 import { ModuleRef } from "@nestjs/core/injector/module-ref";
 import { createRequestHandler } from "@remix-run/express";
-import { InjectRemixConfig, RemixConfig } from "./remix.config";
+import { InjectRemixConfig, type RemixConfig } from "./remix.config";
 import { hasAnotherMatch } from "./express.utils";
 
 export interface RemixLoadContext extends AppLoadContext {

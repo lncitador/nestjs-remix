@@ -4,7 +4,7 @@
     "rootDirs": ["./src"],
     "baseUrl": "./src",
     "module": "commonjs",
-    "target": "esnext",
+    "target": "es2017",
     "lib": ["DOM", "DOM.Iterable", "ES2017"],
     "sourceMap": true,
     "allowJs": true,
@@ -21,7 +21,8 @@
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "strict": false,
-    "skipLibCheck": true
+    "skipDefaultLibCheck": false,
+    "skipLibCheck": false
   },
   "include": ["src/**/*"],
   "exclude": [
